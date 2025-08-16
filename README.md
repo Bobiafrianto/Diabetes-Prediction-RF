@@ -1,12 +1,12 @@
-# Proyek Klasifikasi Diabetes dengan Random Forest
+# Diabetes Classification Project with Random Forest
 
-Proyek ini bertujuan untuk membangun model machine learning menggunakan algoritma **Random Forest** untuk mengkalisifikasikan diabetes atau tidak diabetes berdasarkan data diagnostik.
+This project aims to build a machine learning model using the **Random Forest** algorithm to classify whether a patient has diabetes or not based on diagnostic data.
 
-### Bahasa & Environment
+### Language & Environment
 ![Python](https://img.shields.io/badge/Python-3.13.1-blue?logo=python&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Notebook-Jupyter-orange?logo=jupyter&logoColor=white)
 
-### Tools & Library
+### Tools & Libraries
 ![Pandas](https://img.shields.io/badge/Pandas-2.2.2-teal?logo=pandas&logoColor=white)
 ![Numpy](https://img.shields.io/badge/Numpy-2.0.0-purple?logo=numpy&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-3.9.2-red?logo=plotly&logoColor=white)
@@ -15,13 +15,11 @@ Proyek ini bertujuan untuk membangun model machine learning menggunakan algoritm
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.5.0-green?logo=scikitlearn&logoColor=white)
 ![Joblib](https://img.shields.io/badge/Joblib-1.4.2-darkblue?logo=python&logoColor=white)
 
-
 ### Model
 ![RandomForest](https://img.shields.io/badge/Model-RandomForest-yellowgreen)
 
-
 ---
 
-## Deskripsi Proyek
+## Project Description
 
-Dalam proyek ini, saya melakukan beberapa langkah penting untuk memastikan kualitas data dan performa model. Pertama, saya mengecek fitur-fitur yang seharusnya tidak bernilai *NaN*. Hasil pengecekan menunjukkan bahwa memang tidak ada nilai *NaN*, namun terdapat nilai `0` pada fitur tertentu yang tidak valid secara medis. Untuk mengatasi hal ini, nilai `0` pada masing-masing fitur tersebut saya ganti dengan nilai median dari fitur yang bersangkutan. Setelah data dibersihkan, saya melakukan pemeriksaan keseimbangan kelas pada variabel target `Outcome` dan menemukan adanya ketidakseimbangan, di mana jumlah data pasien tidak diabetes jauh lebih banyak dibandingkan pasien dengan diabetes. Agar model tidak bias terhadap kelas mayoritas, saya menerapkan teknik **SMOTE (Synthetic Minority Oversampling Technique)** yang menghasilkan data tambahan untuk kelas minoritas sehingga distribusi kelas menjadi lebih seimbang. Dengan data yang telah bersih dan seimbang, saya kemudian membangun dan melatih model **Random Forest Classifier** untuk melakukan prediksi terhadap kemungkinan seorang pasien menderita diabetes.
+In this project, I carried out several key steps to ensure both data quality and model performance. First, I checked the features that should not contain *NaN* values. The inspection showed that there were indeed no *NaN* values, but some features had `0` values that are not medically valid. To address this, I replaced each `0` value in the affected features with the **median** of that feature. After cleaning the data, I examined the class distribution in the target variable `Outcome` and found an imbalance, where the number of non-diabetic patients was much higher than diabetic patients. To mitigate this imbalance and avoid model bias toward the majority class, I applied the **SMOTE (Synthetic Minority Oversampling Technique)** method, which generated additional samples for the minority class and made the dataset more balanced. With clean and balanced data, I then built and trained a **Random Forest Classifier** to predict the likelihood of a patient having diabetes.
